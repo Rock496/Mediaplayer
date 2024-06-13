@@ -2,6 +2,7 @@ import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -21,7 +22,9 @@ public class media extends Application{
      sc.setFill(Color.WHITE);
     
     //((sccontrol)loader.getController()).init(st);
-      st.initStyle(StageStyle.TRANSPARENT);
+      //st.initStyle(StageStyle.TRANSPARENT);
+      st.getIcons().add(new Image(getClass().getResourceAsStream("/logo.png")));
+      st.setTitle("Media Player");
       st.setFullScreen(true);
      st.setScene(sc);
      st.show();
