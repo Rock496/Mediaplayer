@@ -1,8 +1,8 @@
 .root {
-    -fx-background-color: #29eb86;
-    -fx-background-radius: 28;
+    -fx-background-color: #eb8a29;
+    
 }
 .me{
-    -fx-background-color: #3047a5;
-   
+    -fx-background-color: linear-gradient(to right,#eb8a29,#ddd310dd);
+    
 }

@@ -6,50 +6,26 @@ import java.io.File;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
-//import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.Pane;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 import javafx.scene.media.MediaView;
 import javafx.stage.FileChooser;
-import javafx.stage.Stage;
 import javafx.util.Duration;
 
 public class sccontrol {
-    @FXML private Pane titlepane,mediPane;
 
-     @FXML private ImageView btmin,btclose,btmax;
-     private double x,y;
+    
      
      @FXML MediaView mv;
 
      @FXML 
-     private Button play,pause,reset;
+     private Button btplay,btpause,btreset;
     // private File file;
      private Media media;
      private MediaPlayer mp;
      
-    
-
-     public void init(Stage st) {
-        titlepane.setOnMousePressed(mouseEvent -> {
-            x = mouseEvent.getSceneX();
-            y = mouseEvent.getSceneY();
-        });
-        titlepane.setOnMouseDragged(mouseEvent -> {
-            st.setX(mouseEvent.getScreenX()-x);
-            st.setY(mouseEvent.getScreenY()-y);
-        });
-
-        btclose.setOnMouseClicked(mouseEvent -> st.close());
-        btmin.setOnMouseClicked(mouseEvent -> st.setIconified(true));
-        btmax.setOnMouseClicked(mouseEvent -> st.setFullScreen(true));
-    }
-
-
-   
     @FXML
     void selectfile(ActionEvent event) {
           FileChooser flc=new FileChooser();
@@ -72,22 +48,22 @@ public class sccontrol {
         
 
     @FXML
-    void playmd(ActionEvent event) {
-         mp.play();
+    void pausemd(MouseEvent event) {
+      mp.pause();
     }
 
     @FXML
-    void pausemd(ActionEvent event) {
-        mp.pause();
+    void playmd(MouseEvent event) {
+      mp.play();
     }
 
     @FXML
-    void resetmd(ActionEvent event) {
+    void resetmd(MouseEvent event) {
         if(mp.getStatus()!=MediaPlayer.Status.READY){
-        mp.seek(Duration.seconds(0.0));
-       }
+            mp.seek(Duration.seconds(0.0));
     }
 
 
 }
 
+}

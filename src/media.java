@@ -20,9 +20,9 @@ public class media extends Application{
      Scene sc=new Scene(loader.load());
      sc.setFill(Color.WHITE);
     
-    ((sccontrol)loader.getController()).init(st);
+    //((sccontrol)loader.getController()).init(st);
       st.initStyle(StageStyle.TRANSPARENT);
-      //st.setFullScreen(true);
+      st.setFullScreen(true);
      st.setScene(sc);
      st.show();
     }
